@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Message{
+private:
+    string text;
+    
+public:
+   Message(const string& message) : text(message){
+       cout << "Создано сообщение: " << "["  << text << "]" << "\n";
+   }
+   ~Message(){
+       cout << "Удалено сообщение: " << "[" << text << "]" << "\n";
+   }
+   void print(){
+       cout << "Выведено сообщение: " << text << "\n";
+   }
+
+};
+
+
+
+int main() {
+    Message staticMessage("Первое сообщение ");
+    staticMessage.print();
+    
+    
+    Message* dynamic = new Message("Второе сообщение");
+    dynamic -> print();
+    delete dynamic;
+    
+    
+    
+    
+    return 0;
+	
+
+}
