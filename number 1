@@ -6,13 +6,13 @@ private:
     
 public:
    Message(const string& message) : text(message){
-       cout << "Создано сообщение: " << "["  << text << "]" << "\n";
+       cout << "Создано сообщение: " << "["  << text << "]" << "\n";     //конструктор с парметром
    }
    ~Message(){
-       cout << "Удалено сообщение: " << "[" << text << "]" << "\n";
+       cout << "Удалено сообщение: " << "[" << text << "]" << "\n";    //ИСПОЛЬЗОВАН ДЕСТРУКТОР
    }
    void print(){
-       cout << "Выведено сообщение: " << text << "\n";
+       cout << "Выведено сообщение: " << text << "\n";    //ВЫВОД СООБЩЕНИЯ
    }
 
 };
@@ -21,12 +21,12 @@ public:
 
 int main() {
     Message staticMessage("Первое сообщение ");
-    staticMessage.print();
+    staticMessage.print();      //СОЗДАНИЕ НА СТЕКЕ
     
     
-    Message* dynamic = new Message("Второе сообщение");
+    Message* dynamic = new Message("Второе сообщение");    //СОЗДАНИЕ ДИНАМИЧЕСКИ
     dynamic -> print();
-    delete dynamic;
+    delete dynamic;     //УДАЛЕНИЕ  ОБЬКЕТА
     
     
     
