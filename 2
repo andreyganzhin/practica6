@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Counter{
+private:
+   int id;
+   static int totalCounters;
+
+public:
+   Counter(){
+       totalCounters++;
+       id = totalCounters;
+       cout << "счетчик #" << id << "создан" << "\n";
+   }
+   
+   
+   ~Counter(){
+       totalCounters--;
+       cout << "счетчик #" << id <<"уничтожен" << "\n";
+   }
+   static int getTotalCounters(){
+       return totalCounters;
+   }
+};
+
+int Counter::totalCounters = 0;
+int main(){
+    int N;
+    cout << "сколько желаете счетчиков создать? " << "\n";
+    cin >> N;
+    Counter* counters = new Counter[N];
+    cout << Counter::getTotalCounters() << "\n";
+    delete[] counters;
+    cout << Counter::getTotalCounters() << "\n";
+    
+    
+    cout<<
+
+       
+   
+   
+    
+    return 0;
+	
+
+}
