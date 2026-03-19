@@ -7,30 +7,30 @@ private:
 
 public:
    Counter(){
-       totalCounters++;
+       totalCounters++;    //использовал конструктор по умолчанию
        id = totalCounters;
        cout << "счетчик #" << id << "создан" << "\n";
    }
    
    
-   ~Counter(){
+   ~Counter(){       //деструктор
        totalCounters--;
        cout << "счетчик #" << id <<"уничтожен" << "\n";
    }
    static int getTotalCounters(){
-       return totalCounters;
+       return totalCounters;      //статический метод для получения количества
    }
 };
 
-int Counter::totalCounters = 0;
+int Counter::totalCounters = 0;  //начальное значение
 int main(){
     int N;
     cout << "сколько желаете счетчиков создать? " << "\n";
     cin >> N;
-    Counter* counters = new Counter[N];
-    cout << Counter::getTotalCounters() << "\n";
+    Counter* counters = new Counter[N];     //создаю динамический массив с удалением соответственно
+    cout << Counter::getTotalCounters() << "\n";  // до удалеия
     delete[] counters;
-    cout << Counter::getTotalCounters() << "\n";
+    cout << Counter::getTotalCounters() << "\n"; //здесь вывод количества после удаление массива
     
     
     cout<<
